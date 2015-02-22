@@ -8,7 +8,7 @@
  * @copyright  2013
  */
 Ractive.events.draggable = function(node, fire) {
-    var $self = Ractive.eventDefinitions.draggable;
+    var $self = Ractive.events.draggable;
 
     var Drag = {
         event: function(name) {
@@ -59,5 +59,5 @@ Ractive.events.draggable = function(node, fire) {
     };
 };
 
-Ractive.eventDefinitions.draggable.current = null;
-Ractive.eventDefinitions.draggable.previous = null;
+Ractive.events.draggable.current = null;
+Ractive.events.draggable.previous = null;
