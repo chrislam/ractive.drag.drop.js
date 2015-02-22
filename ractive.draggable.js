@@ -7,7 +7,7 @@
  * @author  Nijiko Yonskai
  * @copyright  2013
  */
-Ractive.eventDefinitions.draggable = function(node, fire) {
+Ractive.events.draggable = function(node, fire) {
     var $self = Ractive.eventDefinitions.draggable;
 
     var Drag = {
