@@ -1,6 +1,6 @@
 /**
  * Drag N' Drop Ractive Event
- * 
+ *
  * @param  {Object}   node DOM Node
  * @param  {Function} fire Method to fire back data to ractive.on
  * @return {Object}        Teardown method
@@ -8,32 +8,17 @@
  * @copyright  2013
  */
 Ractive.events.draggable = function(node, fire) {
-    var $self = Ractive.events.draggable;
-
+    'use strict';
     var Drag = {
         event: function(name) {
             return function(event) {
-                if (name === 'drag_start') {
-                    $self.current = node;
-                }
-
                 fire({
-                    node: $self.current || node,
-                    source: node,
+                    node: node,
                     name: name,
                     type: name.split('_')[1],
                     target: this,
-                    original: event,
-                    previous: $self.previous
+                    original: event
                 });
-
-                if (name === 'drag_enter') {
-                    $self.previous = node;
-                }
-
-                if (name === 'drag_end') {
-                    $self.current = null;
-                }
             };
         }
     };
@@ -58,6 +43,3 @@ Ractive.events.draggable = function(node, fire) {
         }
     };
 };
-
-Ractive.events.draggable.current = null;
-Ractive.events.draggable.previous = null;
